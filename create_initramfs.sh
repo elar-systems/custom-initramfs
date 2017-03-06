@@ -133,23 +133,24 @@ done
 
 [[ "$(type rpm2cpio 2>/dev/null)" ]] || { echo "Please install rpm2cpio" ; exit 1 ; }
 [[ "$(type xz 2>/dev/null)" ]] || { echo "Please install xz" ; exit 1 ; }
+[[ "$(type mkimage 2>/dev/null)" ]] || { echo "Please install mkimage" ; exit 1 ; }
 
 # Get a busybox RPM from Fedora
 if [[ "${ARCH}" == "ppc64" ]] ; then
-	pkg=busybox-1.22.1-4.fc23.ppc64.rpm
-	pkgurl=${pkgurl:-https://dl.fedoraproject.org/pub/fedora-secondary/releases/23/Everything/ppc64/os/Packages/b/}${pkg}
+	pkg=busybox-1.22.1-5.fc24.ppc64.rpm
+	pkgurl=${pkgurl:-https://dl.fedoraproject.org/pub/fedora-secondary/releases/25/Everything/ppc64/os/Packages/b/}${pkg}
 elif [[ "${ARCH}" == "ppc64le" ]] ; then
-	pkg=busybox-1.22.1-4.fc23.ppc64le.rpm
-	pkgurl=https://dl.fedoraproject.org/pub/fedora-secondary/releases/23/Everything/ppc64le/os/Packages/b/$pkg
+	pkg=busybox-1.22.1-5.fc24.ppc64le.rpm
+	pkgurl=https://dl.fedoraproject.org/pub/fedora-secondary/releases/25/Everything/ppc64le/os/Packages/b/$pkg
 elif [[ "${ARCH}" == "i386" ]] ; then
-	pkg=busybox-1.22.1-4.fc23.i686.rpm
-	pkgurl=https://dl.fedoraproject.org/pub/fedora/linux/releases/23/Everything/i386/os/Packages/b/${pkg}
+	pkg=busybox-1.22.1-5.fc24.i686.rpm
+	pkgurl=https://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/i386/os/Packages/b/${pkg}
 elif [[ "${ARCH}" == "x86_64" ]] ; then
-	pkg=busybox-1.22.1-4.fc23.x86_64.rpm
-	pkgurl=https://dl.fedoraproject.org/pub/fedora/linux/releases/23/Everything/x86_64/os/Packages/b/${pkg}
+	pkg=busybox-1.22.1-5.fc24.x86_64.rpm
+	pkgurl=https://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/x86_64/os/Packages/b/${pkg}
 elif [[ "${ARCH}" == "arm" ]] ; then
-	pkg=busybox-1.22.1-4.fc23.armv7hl.rpm
-	pkgurl=https://dl.fedoraproject.org/pub/fedora/linux/releases/23/Everything/armhfp/os/Packages/b/${pkg}
+	pkg=busybox-1.22.1-5.fc24.armv7hl.rpm
+	pkgurl=https://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/armhfp/os/Packages/b/${pkg}
 else
 	usage
 fi
